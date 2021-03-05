@@ -1,0 +1,353 @@
+@font-face {
+  font-family: "poppins";
+  src: local("popRegular"), url(./fonts/Poppins/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: "poppinsh1";
+  src: local("popH1"), url(./fonts/Poppins/Poppins-Bold.ttf);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+.App {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-family: "poppinsh1";
+  color: #044b09;
+  /* color: black; */
+}
+h2 {
+  color: #0b6568;
+  font-family: "poppinsh1";
+  font-size: 24px;
+}
+.back-svg {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  fill: #6057b8;
+  opacity: 1;
+}
+
+.container {
+  height: 90%;
+  width: 90vw;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 1.3rem;
+  backdrop-filter: blur(17px);
+  display: grid;
+  grid-template-columns: 20% 2fr;
+  border-radius: 1.3rem;
+  z-index: 2;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+  border: 0.5px solid #70707030;
+  box-shadow: 0px 15px 20px #0007fe50;
+}
+
+.sidebar {
+  /* filter: brightness(15%); */
+  background: rgb(173, 171, 171, 0.3);
+  border-radius: 1.3rem 0rem 0rem 1.3rem;
+  z-index: 10;
+}
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  z-index: 30;
+  margin-top: 10%;
+}
+.profile-container {
+  height: 133px;
+  width: 133px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile-pic {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  top: -20px;
+  left: -8px;
+  position: absolute;
+}
+.profile-info h2 {
+  font-family: "poppins", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0;
+  user-select: none;
+}
+.nav-links {
+  margin-bottom: 70px;
+}
+.link {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  cursor: pointer;
+  user-select: none;
+}
+
+.link img {
+  height: 40px;
+  width: 40px;
+  /* align-content: flex-start; */
+  margin-left: 30%;
+}
+
+.link h2 {
+  font-family: "poppins ", sans-serif;
+  transition: color 0.5s;
+}
+
+.link h2:hover {
+  color: #ff9494;
+}
+.cta {
+  font-family: "Ubuntu", sans-serif;
+  height: 50px;
+  width: 200px;
+  border: none;
+  background-color: #ff9494;
+  border-radius: 60px;
+  color: #0b6568;
+  font-family: poppinsh1;
+  font-size: 24px;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 3px 10px 15px #ff949490;
+}
+
+.contact-cta {
+  transition: 0.2s ease-in;
+}
+.contact-cta:hover {
+  transform: translateY(-5px);
+  transform: scale(1.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  height: 10vh;
+}
+
+.header h1 {
+  font-size: 50px;
+  margin-left: 5%;
+}
+.project-container {
+  display: grid;
+  margin-top: 3%;
+  height: 70vh;
+  grid-template-columns: 5% 25% 1fr 5%;
+}
+
+.project-img {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-img img {
+  width: 60%;
+  height: 60%;
+  margin: 0 0 0 10%;
+}
+.project-info {
+  display: grid;
+  grid-template-columns: 8% 1fr 15%;
+  align-items: center;
+  justify-content: center;
+  height: 174px;
+  width: 100%;
+  backdrop-filter: blur(157px);
+  filter: brightness(100%);
+  border-radius: 10px;
+  align-items: start;
+  overflow: hidden;
+  box-shadow: 3px 15px 10px #0007fe10;
+}
+
+.project-info a {
+  color: #ff9494;
+  font-family: "poppinsh1";
+  grid-column-start: 3;
+  grid-column-end: 4;
+  font-size: 24px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 90%;
+  padding-right: 2%;
+  text-decoration: none;
+}
+.project-title {
+  color: #044b09;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin: 0;
+  padding: 0;
+  font-family: "poppinsh1";
+  font-size: 18px;
+  padding: 5px;
+}
+.project-desc {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin: 0;
+  padding: 0;
+  font-family: "poppins";
+  font-weight: 600;
+  color: #0b6568;
+}
+.skills-container {
+  margin-top: 3%;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: 10% 1fr;
+}
+.skills {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+}
+.skill {
+  height: 30%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.skill img {
+  width: 30%;
+  height: 50%;
+}
+.animate {
+  animation-name: okay;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+@keyframes okay {
+  0% {
+    transform: translateY(0%);
+    transform: scale(1.5);
+  }
+  25% {
+    transform: translateY(-55%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  75% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(-0%);
+    transform: scale(1);
+  }
+}
+.shadow {
+  height: 10px;
+  width: 30%;
+  background-color: #6057b8;
+  border-radius: 50%;
+  opacity: 0.1;
+  margin-top: 10px;
+}
+
+.about-container {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about-info {
+  width: 50%;
+  height: auto;
+  backdrop-filter: blur(20px);
+  padding: 10px 50px;
+  border-radius: 10px;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+.phone {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-form {
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 10rem;
+  height: 50%;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.contact-form input {
+  width: 75%;
+}
+
+.appear-enter {
+  opacity: 0.1;
+}
+.appear-enter-active {
+  opacity: 0.3;
+  transform: scale(0.9);
+  transition: opacity 1s ease-in;
+}
+.appear-enter-done {
+  opacity: 1;
+  transform: translateX(0);
+}
+.appear-exit {
+  opacity: 1;
+}
+.appear-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+.appear-exit-done {
+  opacity: 0;
+}
