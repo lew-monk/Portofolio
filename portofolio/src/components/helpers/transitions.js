@@ -12,6 +12,9 @@ const easing = "spring(1, 150, 10)";
 const triggerAnimationDoneEvent = (node) =>
   node.dispatchEvent(new Event(ANIMATION_DONE_EVENT));
 
+export const addEndListener = (node, done) =>
+  node.addEventListener(ANIMATION_DONE_EVENT, done);
+
 export const animateProjectsIn = (gridContainer) => {
   anime
     .timeline()
@@ -43,6 +46,17 @@ export const animateProjectsIn = (gridContainer) => {
         duration: 1000,
       },
       "-=1000"
+    )
+    .add(
+      {
+        targets: gridContainer.querySelectorAll(".about-container"),
+        easing,
+        opacity: createOpacityAnimationConfig(true),
+        translateY: 0,
+        delay: anime.stagger(70),
+        duration: 1000,
+      },
+      "-=1000"
     );
 };
 
@@ -66,3 +80,14 @@ export const animateProjectsOut = (gridContainer) =>
       },
       "-=1400"
     );
+
+export const menuAnimateIn = () => {
+  const menu = document.querySelector(".burger-menu");
+  menu.addEventListener("click", (e) => {
+    anime.add({
+      targets: menu,
+      easing,
+      translateY: "120%",
+    });
+  });
+};
